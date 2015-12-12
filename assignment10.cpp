@@ -42,6 +42,7 @@ int main()
 					}
 					else //frames not full
 					{
+						pageFaults++;
 						//std::cout << k << " added to frame.\n";
 						frames.push_front(k);
 					}
