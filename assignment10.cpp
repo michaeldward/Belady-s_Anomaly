@@ -8,13 +8,13 @@ int main()
 	int FRAME_MAX;
 	int previousFaults = 10000;
 	int anomolies = 0;
-	for (int a = 0; a < 100; ++a) //100 tests of entire process
+	for (int a = 1; a <= 100; ++a) //100 tests of entire process
 	{
 		std::cout << "Sequence: " << a << std::endl;
-		for (int i = 0; i < 100; ++i) // testing 1 through 100 frames
+		for (int i = 1; i <= 100; ++i) // testing 1 through 100 frames
 		{
 			int pageFaults = 0;
-			FRAME_MAX = i + 1;
+			FRAME_MAX = i;
 			std::deque<int> frames; //frames, going up to 100
 			for (int j = 0; j < 1000; ++j)
 			{
@@ -49,7 +49,7 @@ int main()
 			}
 			
 
-			if (pageFaults > previousFaults)
+			if (pageFaults > previousFaults && FRAME_MAX > 1)
 			{
 				std::cout << "Frame Max: " << FRAME_MAX - 1 << "; Page Faults: " << previousFaults << ".\n";
 				std::cout << "Frame Max: " << FRAME_MAX << "; Page Faults: " << pageFaults << ".\n";
