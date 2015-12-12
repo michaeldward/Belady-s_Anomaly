@@ -66,7 +66,7 @@ int main()
 
 			if (pageFaults > previousFaults && FRAME_MAX > 1)
 			{
-				std::cout << "Anomaly discovered!\n";
+				std::cout << "\nAnomaly discovered!\n";
 				std::cout << "Sequence: " << a << std::endl;
 				std::cout << "Frame Max: " << FRAME_MAX - 1 << "; Page Faults: " << previousFaults << ".\n";
 				std::cout << "Frame Max: " << FRAME_MAX << "; Page Faults: " << pageFaults << ".\n";
@@ -75,5 +75,5 @@ int main()
 			previousFaults = pageFaults;
 		}
 	}
-	std::cout << "Anomalies: " << anomolies << std::endl;
+	std::cout << "\nAnomalies: " << anomolies << std::endl;
 }
