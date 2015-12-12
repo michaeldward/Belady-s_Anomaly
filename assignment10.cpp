@@ -58,6 +58,6 @@ int main()
 			}
 			previousFaults = pageFaults;
 		}
-		std::cout << "Anomalies: " << anomolies;
+		std::cout << "Anomalies: " << anomolies << std::endl;
 	}
 }
