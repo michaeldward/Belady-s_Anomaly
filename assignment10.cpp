@@ -32,7 +32,7 @@ int main()
 			{
 				//check if the number is already in the frames
 				bool inFrame = false;
-				int currentNumber = sequenceValues[i][j];
+				int currentNumber = sequenceValues[a][j];
 				for (size_t p = 0; p < frames.size() && !inFrame; ++p)
 				{
 					if (currentNumber == frames[p]) //number is already in frame
