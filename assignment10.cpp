@@ -12,6 +12,10 @@ int main()
 	const int SEQUENCE_SIZE = 1000;
 	int anomolies = 0;
 	int sequenceValues[SEQUENCE_NUMS][SEQUENCE_SIZE];
+	std::cout << "--- Belady's Anomaly Simulator ---\n";
+	std::cout << "Number of sequences tested: " << SEQUENCE_NUMS << std::endl;
+	std::cout << "Length of memory string: " << SEQUENCE_SIZE << std::endl;
+	std::cout << "Frames of physical memory: " << FRAME_SIZE << std::endl;
 	for (int i = 0; i < SEQUENCE_NUMS; ++i)
 	{
 		for (int j = 0; j < SEQUENCE_SIZE; ++j)
@@ -22,7 +26,6 @@ int main()
 
 	for (int a = 1; a <= SEQUENCE_NUMS; ++a) //100 tests of entire process
 	{
-		std::cout << "Sequence: " << a << std::endl;
 		for (int i = 1; i <= FRAME_SIZE; ++i) // testing 1 through 100 frames
 		{
 			int pageFaults = 0;
@@ -63,9 +66,10 @@ int main()
 
 			if (pageFaults > previousFaults && FRAME_MAX > 1)
 			{
+				std::cout << "Anomaly discovered!\n";
+				std::cout << "Sequence: " << a << std::endl;
 				std::cout << "Frame Max: " << FRAME_MAX - 1 << "; Page Faults: " << previousFaults << ".\n";
 				std::cout << "Frame Max: " << FRAME_MAX << "; Page Faults: " << pageFaults << ".\n";
-				std::cout << "Anomaly discovered!\n";
 				anomolies++;
 			}
 			previousFaults = pageFaults;
